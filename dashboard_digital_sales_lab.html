@@ -159,6 +159,9 @@
     position: relative;
     height: 160px;
   }
+  .chart-container.tall {
+    height: 220px;
+  }
 
   /* Table */
   .table-card {
@@ -253,13 +256,13 @@
       </div>
       <div>
         <h1>Digital Sales Lab — Performance Report</h1>
-        <div class="tag">WEBINARS 01, 02 & 03</div>
-        <div class="subtitle">Resultados acumulados · 6 audiencias · 21 envíos</div>
+        <div class="tag">WEBINAR 1 · MARCA PERSONAL Y PROSPECCIÓN EN LINKEDIN</div>
+        <div class="subtitle">Mailchimp · Resultados acumulados · 6 audiencias · 21 envíos · 3 emails</div>
       </div>
     </div>
     <div class="period">
       <strong>Marzo 2026</strong><br>
-      Webinar 01: 9 Mar · Webinar 02: 10 Mar · Webinar 03: 11 Mar
+      Email 01: 9 Mar · Email 02: 10 Mar · Email 03: 11 Mar
     </div>
   </div>
 
@@ -295,12 +298,12 @@
   <!-- Charts Row 1: OR and CTR by country per webinar -->
   <div class="charts-row">
     <div class="chart-card">
-      <h3>Open Rate por País y Webinar</h3>
-      <div class="chart-container"><canvas id="chartOR"></canvas></div>
+      <h3>Open Rate por Audiencia y Email</h3>
+      <div class="chart-container tall"><canvas id="chartOR"></canvas></div>
     </div>
     <div class="chart-card">
-      <h3>Click Rate (CTR) por País y Webinar</h3>
-      <div class="chart-container"><canvas id="chartCTR"></canvas></div>
+      <h3>Click Rate (CTR) por Audiencia y Email</h3>
+      <div class="chart-container tall"><canvas id="chartCTR"></canvas></div>
     </div>
   </div>
 
@@ -539,6 +542,21 @@
     </table>
   </div>
 
+  <!-- Insights -->
+  <div style="background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #d0dff0;border-radius:12px;padding:18px 22px;margin-bottom:12px;">
+    <h3 style="font-size:12px;font-weight:700;color:var(--bmi-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.3px;">Hallazgos & Insights</h3>
+    <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;">
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Guatemala es la audiencia estrella:</strong> lidera en CTR en los 3 emails (6.95% → 17.0% → 18.4%) con un OR consistentemente alto. La audiencia más comprometida.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Caída generalizada de OR en Email 03:</strong> todas las audiencias bajan ~20 puntos vs Email 01. Señal de fatiga o saturación al enviar 3 emails en 3 días consecutivos.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Costa Rica: alto volumen, bajo CTR en W01</strong> (1.06%). El re-envío en W02 a una lista más pequeña mejoró el CTR a 4.28%. Validar calidad de lista principal.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Offshore es el mayor volumen</strong> (45% de los envíos) con CTR estable (~4% en los 3 emails). Buena consistencia para una lista grande.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Colombia y Rep. Dominicana sin Email 03:</strong> no participaron en el tercer envío. Evaluar si fue intencional o un gap de ejecución.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Delivery rate de 98.9% es excelente.</strong> Los bounces se concentran en Costa Rica (260 de 367). Limpiar hard bounces de esa lista.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Tasa de baja mínima (0.04%):</strong> solo 14 unsubs de 33,561 envíos. El contenido no genera rechazo, las audiencias toleran bien la frecuencia.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Rep. Dominicana: buen OR pero CTR muy bajo</strong> (1.6%). La audiencia abre pero no hace clic. Revisar CTA y diseño del email para ese mercado.</li>
+    </ul>
+  </div>
+
   <div class="footer">
     Dashboard generado el 11 de marzo de 2026 · Fuente: Mailchimp Export · [BMI Digital Sales Lab] · BMI Internacional
   </div>
@@ -587,9 +605,9 @@ new Chart(document.getElementById('chartOR'), {
   data: {
     labels: countries,
     datasets: [
-      { label: 'Webinar 01', data: orData.W01, backgroundColor: BMI.dark, borderRadius: 4, barPercentage: 0.75 },
-      { label: 'Webinar 02', data: orData.W02, backgroundColor: BMI.blue, borderRadius: 4, barPercentage: 0.75 },
-      { label: 'Webinar 03', data: orData.W03, backgroundColor: BMI.turquesa, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 01', data: orData.W01, backgroundColor: BMI.dark, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 02', data: orData.W02, backgroundColor: BMI.blue, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 03', data: orData.W03, backgroundColor: BMI.turquesa, borderRadius: 4, barPercentage: 0.75 },
     ]
   },
   options: {
@@ -612,9 +630,9 @@ new Chart(document.getElementById('chartCTR'), {
   data: {
     labels: countries,
     datasets: [
-      { label: 'Webinar 01', data: ctrData.W01, backgroundColor: BMI.dark, borderRadius: 4, barPercentage: 0.75 },
-      { label: 'Webinar 02', data: ctrData.W02, backgroundColor: BMI.blue, borderRadius: 4, barPercentage: 0.75 },
-      { label: 'Webinar 03', data: ctrData.W03, backgroundColor: BMI.turquesa, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 01', data: ctrData.W01, backgroundColor: BMI.dark, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 02', data: ctrData.W02, backgroundColor: BMI.blue, borderRadius: 4, barPercentage: 0.75 },
+      { label: 'Email 03', data: ctrData.W03, backgroundColor: BMI.turquesa, borderRadius: 4, barPercentage: 0.75 },
     ]
   },
   options: {
