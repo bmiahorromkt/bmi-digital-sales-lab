@@ -542,6 +542,21 @@
     </table>
   </div>
 
+  <!-- Performance Insights -->
+  <div style="background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #d0dff0;border-radius:12px;padding:18px 22px;margin-bottom:12px;">
+    <h3 style="font-size:12px;font-weight:700;color:var(--bmi-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.3px;">Hallazgos de Performance</h3>
+    <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;">
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Guatemala es la audiencia estrella:</strong> lidera en CTR en los 3 emails (6.95% → 17.0% → 18.4%) con un OR consistentemente alto. La audiencia más comprometida.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Caída generalizada de OR en Email 03:</strong> todas las audiencias bajan ~20 puntos vs Email 01. Posible fatiga al enviar 3 emails en 3 días consecutivos.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Costa Rica: alto volumen, bajo CTR en Email 01</strong> (1.06%). El re-envío en Email 02 a una lista más pequeña mejoró el CTR a 4.28%. Validar calidad de lista principal.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Offshore es el mayor volumen</strong> (45% de los envíos) con CTR estable (~4% en los 3 emails). Buena consistencia para una lista grande.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Colombia y Rep. Dominicana sin Email 03:</strong> no participaron en el tercer envío. Evaluar si fue intencional o un gap de ejecución.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Delivery rate de 98.9% es excelente.</strong> Los bounces se concentran en Costa Rica (260 de 367). Limpiar hard bounces de esa lista.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Tasa de baja mínima (0.04%):</strong> solo 14 unsubs de 33,561 envíos. El contenido no genera rechazo, las audiencias toleran bien la frecuencia.</li>
+      <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Rep. Dominicana: buen OR pero CTR muy bajo</strong> (1.6%). La audiencia abre pero no hace clic. Revisar CTA y diseño del email para ese mercado.</li>
+    </ul>
+  </div>
+
   <!-- Subject Analysis -->
   <div class="table-card">
     <h3>Análisis de Subject Lines</h3>
@@ -579,12 +594,11 @@
         </tr>
       </tbody>
     </table>
-    <div style="font-size:10px;color:var(--gray-500);margin-top:6px;">* Se utilizó el mismo subject para todas las audiencias en cada email. No hubo personalización por país.</div>
   </div>
 
   <!-- Insights -->
   <div style="background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #d0dff0;border-radius:12px;padding:18px 22px;margin-bottom:12px;">
-    <h3 style="font-size:12px;font-weight:700;color:var(--bmi-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.3px;">Hallazgos & Insights</h3>
+    <h3 style="font-size:12px;font-weight:700;color:var(--bmi-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.3px;">Hallazgos de Subject Lines</h3>
     <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;">
       <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Email 02 ("Mañana:...") fue el más efectivo en CTR.</strong> A pesar de un OR ligeramente menor que el 01, la urgencia de "mañana" generó más clics. Especialmente en Guatemala (17% CTR) y Colombia (5.59% vs 4.27% del Email 01).</li>
       <li style="font-size:11px;color:var(--gray-700);padding-left:16px;position:relative;line-height:1.5;"><span style="position:absolute;left:0;color:var(--bmi-blue);font-weight:700;">→</span><strong>Email 03 ("En 30 minutos:..."): peor OR pero buen CTR relativo.</strong> Los que sí lo abrieron, hicieron clic — especialmente Guatemala (18.36%). El problema no fue el CTA, sino que muchos no lo vieron.</li>
