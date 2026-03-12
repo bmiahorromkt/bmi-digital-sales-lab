@@ -243,6 +243,80 @@
   }
 
   .no-data { color: var(--gray-400); font-style: italic; }
+
+  /* YouTube grid */
+  .yt-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+    .header-left {
+      flex-direction: column;
+    }
+    .header .period {
+      text-align: center;
+    }
+    .kpi-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .charts-row {
+      grid-template-columns: 1fr;
+    }
+    .yt-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    table {
+      font-size: 10px;
+    }
+    table th, table td {
+      padding: 5px 6px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .dashboard {
+      padding: 0 8px;
+    }
+    .header {
+      padding: 16px 18px;
+    }
+    .header h1 {
+      font-size: 16px;
+    }
+    .kpi-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .kpi-card .value {
+      font-size: 22px;
+    }
+    .yt-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    table {
+      font-size: 9px;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    table th, table td {
+      padding: 4px 5px;
+      white-space: nowrap;
+    }
+    td.country {
+      position: sticky;
+      left: 0;
+      background: white;
+      z-index: 1;
+    }
+  }
 </style>
 </head>
 <body>
@@ -272,7 +346,7 @@
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><rect width="20" height="14" rx="3" fill="#FF0000"/><polygon points="8,3 8,11 14,7" fill="white"/></svg>
       YouTube Live — Webinar 1: Marca Personal y Prospección en LinkedIn
     </h3>
-    <div style="display:grid;grid-template-columns:repeat(7, 1fr);gap:10px;">
+    <div class="yt-grid">
       <div style="text-align:center;padding:10px 6px;background:var(--gray-50);border-radius:8px;">
         <div style="font-size:22px;font-weight:800;color:var(--gray-900);">731</div>
         <div style="font-size:9px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.3px;margin-top:2px;">Visualizaciones</div>
@@ -302,6 +376,13 @@
         <div style="font-size:9px;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.3px;margin-top:2px;">Reacciones</div>
       </div>
     </div>
+  </div>
+
+  <!-- Mailchimp Divider -->
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+    <div style="height:1px;flex:1;background:var(--gray-200);"></div>
+    <span style="font-size:11px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:1px;">Mailchimp</span>
+    <div style="height:1px;flex:1;background:var(--gray-200);"></div>
   </div>
 
   <!-- KPIs -->
